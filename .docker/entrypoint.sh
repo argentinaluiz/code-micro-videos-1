@@ -4,14 +4,14 @@
 
 ####FRONTEND
 npm config set cache /var/www/.npm-cache --global
-cd /var/www/frontend && npm install & cd ..
+cd /var/www/frontend && npm install && cd ..
 
 ####BACKEND
 cd backend
-if [! -f ".env"]; then
+if [ ! -f ".env" ]; then
   cp .env.example .env
 fi
-if [! -f ".env.testing"]; then
+if [ ! -f ".env.testing" ]; then
   cp .env.testing.example .env.testing
 fi
 composer install
